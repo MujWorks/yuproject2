@@ -9,13 +9,14 @@ pipeline {
         REMOTE_PORT = '22' // Default SSH port
         //PROJECT_DIR = '/usr/share/nginx/html/my-react-app' // Remote directory where your project should be deployed
         PROJECT_DIR = '/var/www/html' // Remote directory where your project should be deployed
+        GIT_URL = 'https://github.com/MujWorks/yuproject2.git' // Remote directory where your project should be deployed
     }
 
     stages {
         stage('Checkout') {
             steps {
                 // Checkout the code from your GitHub repository
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CleanBeforeCheckout']], userRemoteConfigs: [[url: 'https://github.com/MujWorks/my-react-app.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'CleanBeforeCheckout']], userRemoteConfigs: [[url: $[GIT_URL]]]])
             }
         }
 
