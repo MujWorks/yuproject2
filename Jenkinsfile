@@ -50,7 +50,7 @@ pipeline {
                         sh """
                         set -x
                         ssh -o StrictHostKeyChecking=no -p ${REMOTE_PORT} ${REMOTE_USER}@${REMOTE_SERVER} 'mkdir -p ${PROJECT_DIR}'
-                        scp -r -P ${REMOTE_PORT} build/* ${REMOTE_USER}@${REMOTE_SERVER}:${PROJECT_DIR}
+                        scp -r -P ${REMOTE_PORT} client/build/* ${REMOTE_USER}@${REMOTE_SERVER}:${PROJECT_DIR}
                         """
                     }
                 }
