@@ -33,7 +33,7 @@ pipeline {
             steps {
                 dir('backend') {
                     sh 'npm install'  // Replace with your npm build commands for the backend
-                    sh 'npm run build'
+                    //sh 'npm run build'
                 }
             }
         }
