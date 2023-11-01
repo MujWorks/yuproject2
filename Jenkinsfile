@@ -8,7 +8,7 @@ pipeline {
         REMOTE_USER = 'root'
         REMOTE_PORT = '22' // Default SSH port
         //PROJECT_DIR = '/usr/share/nginx/html/my-react-app' // Remote directory where your project should be deployed
-        PROJECT_DIR = '/var/www/html/yup' // Remote directory where your project should be deployed
+        PROJECT_DIR = '/var/www/html' // Remote directory where your project should be deployed
         GIT_URL = 'https://github.com/MujWorks/yuproject2.git' // Remote directory where your project should be deployed
     }
 
@@ -50,8 +50,8 @@ pipeline {
                         sh """
                         set -x
                         ssh -o StrictHostKeyChecking=no -p ${REMOTE_PORT} ${REMOTE_USER}@${REMOTE_SERVER} 'mkdir -p ${PROJECT_DIR}'
-                        scp -r -P ${REMOTE_PORT} client/build/* ${REMOTE_USER}@${REMOTE_SERVER}:${PROJECT_DIR}/client
-                        scp -r -P ${REMOTE_PORT} backend/** ${REMOTE_USER}@${REMOTE_SERVER}:${PROJECT_DIR}/backend
+                        scp -r -P ${REMOTE_PORT} client/build/* ${REMOTE_USER}@${REMOTE_SERVER}:${PROJECT_DIR}
+                        scp -r -P ${REMOTE_PORT} backend/* ${REMOTE_USER}@${REMOTE_SERVER}:${PROJECT_DIR}/backend
                         """
                     }
                 }
