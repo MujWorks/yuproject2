@@ -20,11 +20,21 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Build Frontend') {
             steps {
-                // Install dependencies and build the React app
-                sh 'npm install'
-                sh 'npm run build'
+                dir('client') {
+                    sh 'npm install'  // Replace with your npm build commands for the frontend
+                    sh 'npm run build'
+                }
+            }
+        }
+
+        stage('Build Backend') {
+            steps {
+                dir('backend') {
+                    sh 'npm install'  // Replace with your npm build commands for the backend
+                    sh 'npm run build'
+                }
             }
         }
 
