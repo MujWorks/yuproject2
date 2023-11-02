@@ -9,8 +9,8 @@ app.use(express.json());
 const db = mysql.createConnection({
   host: "localhost",
   user: "lama",
-  password: "Lamadev123",
-  database: "test",
+  password: "Admin@123",
+database: "test",
 });
 
 app.get("/", (req, res) => {
@@ -72,5 +72,5 @@ app.put("/books/:id", (req, res) => {
 });
 
 app.listen(8800, () => {
-  console.log("Connected to backend.");
+  console.log("Connected to backend. ");
 });
