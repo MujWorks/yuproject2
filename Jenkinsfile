@@ -54,7 +54,7 @@ pipeline {
                         ssh -o StrictHostKeyChecking=no -p ${REMOTE_PORT} ${REMOTE_USER}@${CREMOTE_SERVER} 'mkdir -p ${CPROJECT_DIR}'
                         scp -r -P ${REMOTE_PORT} client/build/* ${REMOTE_USER}@${CREMOTE_SERVER}:${CPROJECT_DIR}
                         ssh -o StrictHostKeyChecking=no -p ${REMOTE_PORT} ${REMOTE_USER}@${BREMOTE_SERVER} 'mkdir -p ${BPROJECT_DIR}'
-                        scp -r -P ${REMOTE_PORT} backend/* ${REMOTE_USER}@${BREMOTE_SERVER}:${BPROJECT_DIR}/backend
+                        scp -r -P ${REMOTE_PORT} backend/* ${REMOTE_USER}@${BREMOTE_SERVER}:${BPROJECT_DIR}
                         """
                     }
                 }
