@@ -6,12 +6,19 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// const db = mysql.createConnection({
+//   host: "localhost",
+//   user: "mujworks",
+//   password: "Admin@123",
+//   database: "testschema",
+// });
+
 const db = mysql.createConnection({
   host: "localhost",
-  user: "mujworks",
-  password: "Admin@123",
-  database: "testschema",
-});
+  user: 'root',
+  password: 'Admin@123',
+  database: 'testschema'
+})
 
 app.get("/", (req, res) => {
   res.json("hello");
