@@ -55,7 +55,7 @@ const Books = () => {
 
       <button className="addHome">
         <Link to="/add" style={{ color: "inherit", textDecoration: "none" }}>
-          Add new book
+          Add new book -
         </Link>
       </button>
     </div>
