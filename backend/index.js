@@ -8,7 +8,7 @@ app.use(express.json());
 
 const db = mysql.createConnection({
   socket : '/var/run/mysqld/mysqld.sock',
-  host: 'localhost',
+  host: '206.189.21.44',
   user: 'mujworks',
   password: 'Admin@123',
   database: 'testschema',
