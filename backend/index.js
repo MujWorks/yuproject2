@@ -7,12 +7,10 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-  socket : '/var/run/mysqld/mysqld.sock',
-  host: '206.189.21.44',
+  host: '209.97.132.53',
   user: 'mujworks',
   password: 'Admin@123',
   database: 'testschema',
-  port: 3306
 })
 
 app.get("/", (req, res) => {
