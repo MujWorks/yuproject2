@@ -10,7 +10,7 @@ const Books = () => {
   useEffect(() => {
     const fetchAllBooks = async () => {
       try {
-        const res = await axios.get("http://142.93.37.197:8800/books");
+        const res = await axios.get("http://143.110.174.6:8800/books");
         setBooks(res.data);
       } catch (err) {
         console.log(err);
@@ -23,7 +23,7 @@ const Books = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://142.93.37.197:8800/books/${id}`);
+      await axios.delete(`http://143.110.174.6:8800/books/${id}`);
       window.location.reload()
     } catch (err) {
       console.log(err);
