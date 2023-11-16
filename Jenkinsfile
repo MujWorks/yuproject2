@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        // Define environment variables here           
+        // Define environment variables here            
         // REMOTE_SERVER = '209.97.134.94'
         BREMOTE_SERVER = '10.106.0.3'
         CREMOTE_SERVER = '10.106.0.4'
