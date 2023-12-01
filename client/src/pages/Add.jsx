@@ -21,7 +21,7 @@ const Add = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://68.183.36.209:8800/books", book);
+      await axios.post("http://104.248.175.214:8800/books", book);
       navigate("/");
     } catch (err) {
       console.log(err);
